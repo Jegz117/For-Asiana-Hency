@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open My Letter</title>
+<style>
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f9c5d1, #fde2e4);
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    padding: 10px;
+  }
+
+  .card-container {
+    width: 90%;
+    max-width: 700px;
+    aspect-ratio: 7 / 5; /* maintains card ratio */
+  }
+
+  .inner-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    cursor: pointer;
+  }
+
+  .inner-card.open {
+    transform: rotateY(180deg);
+  }
+
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  }
+
+  .front {
+    background: #fff;
+    color: #333;
+    font-size: clamp(1.2em, 4vw, 1.6em);
+    text-align: center;
+  }
+
+  .back {
+    background: #ffcad4;
+    color: #333;
+    transform: rotateY(180deg);
+    font-size: clamp(1em, 2.5vw, 1.1em);
+  }
+
+  h1 { color: #ff6f91; text-align: center; margin-bottom: 15px; }
+
+  p { color: #444; line-height: 1.6; margin-bottom: 12px; }
+
+  .ps { margin-top: 20px; font-size: 0.95em; color: #666; }
+
+  .signature { margin-top: 20px; font-style: italic; color: #ff6f91; }
+
+  .hearts { position: absolute; top: 10px; right: 15px; font-size: 18px; }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="inner-card" id="card">
+    <div class="front">
+      <div>📨 For Asiana 🎀</div>
+    </div>
+    <div class="back">
+      <div class="hearts"></div>
+      <h1>Happy Advance New Year, Hence!</h1>
+
+      <p>
+        Happ Advance New Year Hence! It’s been a great year since we started talking again, and even greater during the times
+        mag uban-uban ta mag go home. I know medyo sudden kaayo ni nga atake HAHAHA,
+        but I’ve been planning to say this for quite some time now, and I guess there’s no better
+        time to say it than now.
+      </p>
+
+      <p>
+        I like you, Hence, in a way that I’m actually falling for you as time goes on.
+        It’s how your pretty smile lights up everything around you, and the way you laugh
+        that makes everything feel brighter. I love how passionate, kind, and effortlessly
+        amazing you are. It’s like every little thing you do pulls me in, and I end up
+        falling even more.
+      </p>
+
+      <p>
+        I’m grateful for you and for the connection we have. I just wanted you to know
+        that you matter to me more than just a friend, and this feeling is ever-growing,
+        real, and sincere. Whatever next year brings, I’m thankful that you’re a part of it.
+      </p>
+
+      <div class="ps">
+        <strong>PS.</strong> I’m not saying this to pressure you or expect anything in return.
+        I just wanted to end this year being honest with you and let you know what’s been
+        in my heart. <br><br>
+        Happy advance New Year, Hence! 💕
+      </div>
+
+      <div class="signature">
+        — Jegz
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const card = document.getElementById('card');
+
+// Listen for both click and touchstart for mobile
+card.addEventListener('click', () => {
+  card.classList.toggle('open');
+});
+
+card.addEventListener('touchstart', () => {
+  card.classList.toggle('open');
+});
+</script>
+
+</body>
+</html>
